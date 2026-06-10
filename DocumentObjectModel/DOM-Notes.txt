@@ -1,0 +1,202 @@
+DOM Manipulation HTML se element select karna text change kara HTML badalna CSS
+badalna attribute badalna Event listener add karna
+
+
+HTML Code
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="abcd" id="ab">Hello Duniya</h1>
+    <h1 class="abcd">Hello Duniya</h1>
+    <h1 class="abcd">Hello Duniya</h1>
+  </body>
+</html>
+
+
+JS Code
+
+let ab = document.getElementById("ab")      --> element is selected based on the id of the element, id can
+                                                  only be one therecan't be multiple id in the same code so only
+                                                  one elemtent is selected at a time
+
+let abcd = document.getElementsByClassName("abcd")     --> Classes can be multiple so if the element is selected 
+                                                          based on the class of the elements, classes can be
+                                                          given to multiple elements so getElementsByClassName can
+                                                          select multiple elements
+
+let arpa = document.querySelector("h1")     --> only selects the first element in the body containing this tag
+
+let multih1 = document.querySelectorAll("h1")   --> selects all the elements with h1 tag in the html 
+
+
+
+
+Text/Content Access
+
+InnerText -> makes changes in the text
+textContent -> makes changes in the text
+InnerHTML -> makes changes in the HTML code
+
+
+
+Attribution Manipulation
+
+HTML Code
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://www.google.com"> Download Me </a>
+    <h1 class="abcd">Hello Duniya</h1>
+    <h1 class="abcd">Hello Duniya</h1>
+  </body>
+</html>
+
+JS Code
+
+get attribute
+
+let a = document.querySelector("a");
+a.getAttribute("href");                  -->Output:    https://www.google.com
+
+set attribute
+
+let h1 = document.querySelector("h1");
+h1.setAttribute("href", "https://www.wikipedia.com");           --> Now the legacy code isn't changed but if we
+                                                                    inspect in the browser for the code we can
+                                                                    witness changes occured in the HTML
+
+
+remove attribute
+
+let a = document.querySelector("a");
+a.removeAttribute("href");                --> this will remove the href attribute from the a tag
+
+
+
+
+
+Dynamic DOM Manipulation
+
+Create Element
+append/prepend karo jaha bhi element chahiye waha
+
+let h1 = document.querySelector("h1");
+h1.textContent = "Hello Bhava Kasa Aahes";
+document.querySelector("body").prepend(h1);
+
+** This created a h1 tag in html which can't be seen in the legacy code but the changes happened in the website **
+append matlab element ke end me add hoga
+prepend matlab element ke start me add hoga
+
+
+Append/Prepend
+
+
+HTML Code
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="abcd">Hello Duniya</h1>
+      <h1 class="abcd">Hello Duniya</h1>
+      <h1 class="abcd">Hello Duniya</h1>
+    </div>
+  </body>
+</html>
+
+
+JS Code
+
+Append
+
+let h1 = document.querySelector("h1");
+h1.textContent = "Hello Bhava Kasa Aahes";
+document.querySelector("body").append(h1);     --> this will add the h1 tag at the end of the body tag
+
+Output: Hello Duniya
+        Hello Duniya
+        Hello Duniya
+        Hello Bhava Kasa Aahes
+
+
+
+Prepend
+
+let h1 = document.querySelector("h1");
+h1.textContent = "Hello Bhava Kasa Aahes";
+document.querySelector("body").prepend(h1);    --> this will add the h1 tag at the start of the body tag
+
+Output: Hello Bhava Kasa Aahes
+        Hello Duniya
+        Hello Duniya
+        Hello Duniya
+
+
+
+
+remove element
+
+HTML Code
+
+<!doctype html>
+<html lang="en">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <h1>Hello Duniya</h1>
+  </body>
+</html>
+
+
+JS Code
+
+Let h1 = document.querySelector("h1");
+body.remove("h1");     --> this will remove the h1 tag from the body tag and the output will be blank page
+
+
+
+
+If you wanted to make changes in the CSS of the website using JS then we can do that by using style property of the element
+
+
+let h1 = document.querySelector("h1");
+h1.style.color = "red";     --> this will change the color of the text inside the h1 tag to red
+
+you can also change the background color, font size, font family and many more CSS properties using the style property of the element
+
+You can use add,remove and toggle method to add,remove and toggle the class of the element
+
+let h1 = document.querySelector("h1");
+h1.classList.add("new-class");     --> this will add the class "new-class" to the h1 tag
+
+h1.classList.remove("abcd");     --> this will remove the class "abcd" from the h1 tag
+h1.classList.toggle("new-class");     --> this will toggle the class "new-class" to the h1 tag if it is present then it will remove it and if it is not present then it will add it
+
+toggle is used to add or remove the class based on the condition if the class is present then it will remove it and if it is not present then it will add it
+For eg.:
+let h1 = document.querySelector("h1");
+h1.classList.toggle("new-class");     --> this will add the class "new-class" to the h1 tag
+h1.classList.toggle("new-class");     --> this will remove the class "new-class" from the h1 tag
+
+
