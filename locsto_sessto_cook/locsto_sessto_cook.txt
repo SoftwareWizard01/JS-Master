@@ -1,0 +1,51 @@
+Local Storage
+Apke browser ke andar data store karna jo ki browser band hone par bhi delete nhi hoga.
+localStorage -> this is how it is written in js
+
+1.Store kaise kare - setItem
+localStorage.setItem("name","aryan");
+THis is how to store data in local storage
+Output: Storage {name: 'aryan', length: 1}
+
+2.data fetch kaise kare - getItem
+let val = localStorage.getItem("name");
+Output: (enter val in browser console)
+val
+'aryan'
+
+3.remove kaise kare - removeItem
+localStorage.removeItem("name");
+Output: Storage{length: 0}
+The data is rmeoved from localStorage
+
+4.update kaise kare - setItem he update karta hai
+localStorage.setItem("name","aryan");
+localStorage.setItem("name","arya");
+
+Output:
+Storage{name: 'arya', length: 1}
+
+
+
+Session Storage
+Ye apka data temporarily store karta hai matlab tab band hua data gaya.
+all the attributes are same as localStorage.
+getItem
+setItem
+removeItem
+
+
+Cookies
+Ye bhi data store karta hai and apka data browser ke cookies naam ke property mai save hota hai and ye cookie concept kam data ya light data ke liye hota hai.
+
+browser mai chotta data store karne ke liye cookies ka use hota hai.
+
+cookies can store upto --> ~4KB
+localStorage or sessionStorage can store upto --> ~5MB
+
+cookies mai jo bhi data save karoge wo page reload par automatically server par jaega
+
+
+
+Local Storage mai array wagaira store nhi kar sakte isliye unhe string banake store karte hai jab local storage se data wapis nikalte hai toh string milta hai.
+string se natural form mai laneke liye parse use karte hai
